@@ -27,6 +27,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  padding-top: 150px;
 }
 
 h1 {
@@ -65,4 +66,8 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
