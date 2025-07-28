@@ -1,0 +1,57 @@
+.corePokemon {
+    padding: 4em 2em;
+    text-align: center;
+}
+
+.corePokemon .controls {
+    margin-top: 1.5em;
+}
+
+.corePokemon select {
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+.corePokemon button {
+    margin-left: 1em;
+    padding: 0.5 em 1em;
+    font-size: 1em;
+    border-radius: 15px;
+    color: white;
+}
+
+.forge-btn {
+  display: inline-block;
+  margin: 4em 0;
+  padding: 0.75em 1.5em;
+  background-color: #111;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.forge-btn:hover {
+    opacity: 0.9;
+}
+
+#core-pokemon {
+    padding-top: 600px;
+    margin-top: 600px;
+}
+
+#core-pokemon select {
+    background-color: white;
+    color: black;
+    padding: 0.5em;
+    font-size: 1em;
+    border-radius: 25px;
+}
+
+#core-pokemon h2 {
+    color: black;
+    font-size: 2em;
+}
+
+

@@ -1,0 +1,46 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5rem 0rem;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-left{
+    flex: 1;
+  }
+  .nav-right {
+    flex: 1;
+  }
+  
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .logo img {
+    max-height: 400px; /* increase or decrease as needed */
+    width: auto;       /* keeps aspect ratio */
+    height: auto;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: transform 0.2s ease, font-size 0.2s ease;
+  }
+  .navbar a:hover {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  
+  
