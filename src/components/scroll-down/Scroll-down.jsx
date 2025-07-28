@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import './Scroll-down.css';
 
-export default function corePokemon() {
+export default function CorePokemon() {
     const [poke, setPoke] = useState('');
 
     return(
         <section id='core-pokemon' className='corePokemon'>
             <h2>Choose your core Pokemon</h2>
             <div className='preview'>
-                <img></img>
+                <img>{/*add image here*/}</img>
             </div>
 
             <div className='controls'>

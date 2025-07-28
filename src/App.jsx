@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import mainLogo from '/logo.png'
 import Navbar from './components/Navbar/Navbar'
-import Scrolldown from './components/scroll-down/Scroll-down'
+import Corepokemon from './components/scroll-down/Scroll-down'
 import './components/App.css'
 
 
@@ -28,7 +28,7 @@ function App() {
         </p>
       </div>
 
-      <Scrolldown />
+      <Corepokemon />
 
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
