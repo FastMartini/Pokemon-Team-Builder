@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import mainLogo from '/logo.png'
 import Navbar from './components/Navbar/Navbar'
-import Corepokemon from './components/scroll-down/Scroll-down'
+import Corepokemon from './components/sect-corepokemon/sect-corepokemon'
 import './components/App.css'
 
 
@@ -21,14 +20,12 @@ function App() {
         <a href="#core-pokemon" className='forge-btn'>
           Forge your team
         </a>
-        
-        
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
 
-      <Corepokemon />
+      <div>
+        <Corepokemon/>
+        
+      </div>
 
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more

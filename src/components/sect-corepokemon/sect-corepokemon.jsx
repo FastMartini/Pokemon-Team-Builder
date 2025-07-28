@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Scroll-down.css';
+import './sect-corepokemon.css';
 
 export default function CorePokemon() {
     const [poke, setPoke] = useState('');
