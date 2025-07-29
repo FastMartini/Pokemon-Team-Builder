@@ -5,21 +5,23 @@ export default function CorePokemon() {
     const [poke, setPoke] = useState('');
 
     return(
-        <section id='core-pokemon' className='corePokemon'>
+        <section id = 'core-pokemon' className = 'corePokemon'>
             <h2>Choose your core Pokemon</h2>
-            <div className='preview'>
+            <div className ='corePreview'>
                 <img>{/*add image here*/}</img>
             </div>
 
-            <div className='controls'>
-                <select value={poke} onChange={e => setPoke(e.target.value)}>
-                    <option value="">-- pick one --</option>
-                    <option value="sprigatito">Sprigatito</option>
-                    <option value="fuecoco">Fuecoco</option>
-                    <option value="quaxly">Quaxly</option>
+            <div className ='coreControls'>
+                <select value = {poke} onChange = {e => setPoke(e.target.value)}>
+                    <option value = "">-- pick one --</option>
+                    <option value = "sprigatito">Sprigatito</option>
+                    <option value = "fuecoco">Fuecoco</option>
+                    <option value = "quaxly">Quaxly</option>
                 </select>
-                <button disabled={!poke} onClick={() => alert(`You chose ${poke}!`)}>
-                    Select
+                <button className='btn' disabled={!poke} onClick={() => {
+                    alert(`You chose ${poke}!`);
+                    document.getElementById('Archetype')?.scrollIntoView({ behavior: 'smooth' });}}>
+                        Select
                 </button>
             </div>
         </section>
