@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Corepokemon from './components/sect-corepokemon/sect-corepokemon'
+import Archetype from './components/sect-archetype/sect-archetype'
 import './components/App.css'
 
 
@@ -25,6 +26,11 @@ function App() {
       <div>
         <Corepokemon/>
         
+      </div>
+
+      <div>
+        <Archetype/>
+
       </div>
 
       <p className="read-the-docs">
