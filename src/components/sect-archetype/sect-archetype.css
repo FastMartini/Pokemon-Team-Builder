@@ -1,37 +1,37 @@
-.corePokemon {
+.archetype {
     padding: 4em 2em;
     text-align: center;
 }
 
-.corePokemon .coreControls {
+.archetype .arcControls {
     margin-top: 1.5em;
 }
 
-.corePokemon select {
+.archetype select {
     padding: 0.5em;
     font-size: 1em;
 }
 
-.corePokemon button {
+.archetype button {
     margin-left: 1em;
-    padding: 0.6em 1em;
+    padding: 0.6 em 1em;
     font-size: 1em;
-    border-radius: 8px;
+    border-radius: 15px;
     color: white;
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.corePokemon button:hover {
+.archetype button:hover {
     transform: scale(1.1);
     color: red;
-  }
+}
 
-#core-pokemon {
+#Archetype {
     padding-top: 600px;
     margin-top: 600px;
 }
 
-#core-pokemon select {
+#Archetype select {
     background-color: white;
     color: black;
     padding: 0.5em;
@@ -39,9 +39,7 @@
     border-radius: 25px;
 }
 
-#core-pokemon h2 {
+#Archetype h3 {
     color: black;
     font-size: 2em;
 }
-
-
