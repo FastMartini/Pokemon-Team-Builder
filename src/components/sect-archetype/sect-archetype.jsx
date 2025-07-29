@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
+import PokeImg from '../image-box-select/pokeImg';
 import './sect-archetype.css';
+import CorePokemon from '../sect-corepokemon/sect-corepokemon';
 
-export default function Archetype(){
+export default function Archetype({pokemon}){
 
     const [arc, setArc] = useState('');
 
@@ -9,7 +11,7 @@ export default function Archetype(){
         <section id='Archetype' className='archetype'>
             <h3>Choose your archetype</h3>
             <div className='arcPreview'>
-                <img>{/*add image here*/}</img>
+                <PokeImg pokemon={pokemon} />
             </div>
 
             <div className = 'arcControls'>
