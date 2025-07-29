@@ -1,0 +1,44 @@
+**Product**
+
+1st. Choose Main Pokémon AKA Core
+
+2nd. Choose Archetype:
+
+        •	Stall
+            - Bulkiest archetype
+            - Winning by:
+                - Entry hazards
+                - Status conditions
+                - Weak moves
+                - Without a single breaker (Wallbreaker) or fast Pokémon
+                - Focus completely on defense and chip damage
+
+        •	Semi-Stall
+            - 4-5 bulky Pokémon 
+                - enable 1-2 more offensive powerful Pokémon
+                - give them safe entry opportunities to break
+        •	Bulky Balance
+            - 4 bulky Pokémon
+                - enable 2 offensive powerful Pokémon
+    	        - give them safe entry opportunities to break
+
+        •	Balance
+            - 3 bulky Pokémon
+            - 3 offensive Pokémon
+
+        •	Bulky Offense
+            - 2 bulky Pokémon
+            - 4 offensive Pokémon
+            - Get off strong attacks using Pokémon with high hp and high defensive stats
+
+        •	Offense
+            - 2 bulky Pokémon
+            - 4 offensive Pokémon
+            - Get off strong attacks using Pokémon with high speed stats
+
+•	Hyper Offense
+            - One dedicated lead to set hazards or screens
+            - 4-5 sweepers
+            - Sacking Pokémon is part of the game plan (Rarely switch out)
+
+Product will automatically set up team based on Core Pokémon Archetype, and type coverage
