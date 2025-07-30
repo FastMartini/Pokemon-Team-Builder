@@ -6,9 +6,12 @@ export default function CorePokemon({pokemon, setPokemon}) {
 
     return(
         <section id = 'core-pokemon' className = 'corePokemon'>
+            
+            <PokeImg pokemon={pokemon} />
+
             <h2>Choose your core Pokemon</h2>
 
-            <PokeImg pokemon={pokemon} />
+            
 
             <div className ='coreControls'>
                 <select value = {pokemon} onChange = {e => setPokemon(e.target.value)}>

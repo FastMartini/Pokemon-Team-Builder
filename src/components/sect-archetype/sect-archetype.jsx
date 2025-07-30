@@ -9,10 +9,11 @@ export default function Archetype({pokemon}){
 
     return(
         <section id='Archetype' className='archetype'>
-            <h3>Choose your archetype</h3>
             <div className='arcPreview'>
                 <PokeImg pokemon={pokemon} />
             </div>
+            <h3>Choose your archetype</h3>
+            
 
             <div className = 'arcControls'>
                 <select value = {arc} onChange = {e => setArc(e.target.value)}>
