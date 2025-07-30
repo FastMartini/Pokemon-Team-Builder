@@ -4,6 +4,7 @@ import './sect-corepokemon.css';
 
 export default function CorePokemon({pokemon, setPokemon}) {
 
+
     return(
         <section id = 'core-pokemon' className = 'corePokemon'>
             
