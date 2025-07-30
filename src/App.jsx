@@ -5,9 +5,10 @@ import Archetype from './components/sect-archetype/sect-archetype'
 import './components/App.css'
 
 
-
-
 function App() {
+
+  const [pokemon, setPokemon] = useState('');
+  
   return (
     <>
       <div>
@@ -24,12 +25,11 @@ function App() {
       </div>
 
       <div>
-        <Corepokemon/>
-        
+        <Corepokemon pokemon={pokemon} setPokemon={setPokemon}/>
       </div>
 
       <div>
-        <Archetype/>
+        <Archetype pokemon={pokemon}/>
 
       </div>
 
