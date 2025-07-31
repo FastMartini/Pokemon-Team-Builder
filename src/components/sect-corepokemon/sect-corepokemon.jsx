@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import PokeImg from '../image-box-select/pokeImg';
+import PokeImg from '../image-box-select/PokeImg';
 import './sect-corepokemon.css';
 
 export default function CorePokemon({pokemon, setPokemon}) {

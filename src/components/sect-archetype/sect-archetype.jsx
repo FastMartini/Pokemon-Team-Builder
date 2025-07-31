@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Pokemon_by_archetype } from '../image-box-select/poke-by-archetype';
+import { Pokemon_by_archetype } from '../image-box-select/pokeByArchetype';
 import './sect-archetype.css';
 
 const archetypeToPokemon = {
