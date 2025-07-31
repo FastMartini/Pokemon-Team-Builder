@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Pokemon_by_archetype } from '../image-box-select/pokeByArchetype';
-import './sect-archetype.css';
+import './Archetype.css';
 
 const archetypeToPokemon = {
     stall: 'toxapex',
