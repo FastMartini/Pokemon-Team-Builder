@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Pokemon_by_archetype } from '../image-box-select/pokeByArchetype';
+import { pokemonByArchetype } from '../image-box-select/pokeByArchetype';
 import './Archetype.css';
 
 const archetypeToPokemon = {
@@ -16,7 +16,7 @@ export default function Archetype(){
     const [arc, setArc] = useState('');
 
     const pokemonName = arc ? archetypeToPokemon[arc] : null;
-    const pokemonImage = pokemonName ? Pokemon_by_archetype[pokemonName] : null
+    const pokemonImage = pokemonName ? pokemonByArchetype[pokemonName] : null
 
     return(
         <section id='Archetype' className='archetype'>
