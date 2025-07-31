@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
-import Corepokemon from './components/sect-corepokemon/sect-corepokemon'
-import Archetype from './components/sect-archetype/sect-archetype'
+import Corepokemon from './components/CorePokemon/CorePokemon'
+import Archetype from './components/Archetype/Archetype'
 import './components/App.css'
 
 

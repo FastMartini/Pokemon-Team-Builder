@@ -1,6 +1,6 @@
 import React from "react";
-import { pokeImages } from "./poke-img";
-import "./Pokeimg.css";
+import { pokeImages } from "./pokeImages";
+import "./PokeImg.css";
 
 export default function PokeImg({ pokemon }) {
     return(
