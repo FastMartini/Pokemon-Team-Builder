@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PokeImg from '../image-box-select/PokeImg';
 import './CorePokemon.css';
 
