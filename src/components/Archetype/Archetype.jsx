@@ -1,16 +1,14 @@
 import React, {useState} from 'react';
 import { pokemonByArchetype } from '../image-box-select/pokeByArchetype';
 import './Archetype.css';
-import { StatBar } from '../StatBar/StatBar';
 
-const archetypeToPokemon = {
-    stall: 'toxapex',
-    semiStall: 'avalugg',
-    balance: 'armarouge',
-    bulkyOff: 'annihilape',
-    offense: 'baxcalibur',
-    hyperOff: 'iron_valiant'
-};
+import { HpBar } from '../StatBar/StatBar';
+import { AttackBar } from '../StatBar/StatBar';
+import { DefenseBar } from '../StatBar/StatBar';
+import { SpatkBar } from '../StatBar/StatBar';
+import { SpdefBar } from '../StatBar/StatBar';
+import { SpeedBar } from '../StatBar/StatBar';
+
 
 export default function Archetype(){
 
@@ -21,11 +19,31 @@ export default function Archetype(){
 
     return(
         <section id='Archetype' className='archetype'>
-            <div>
 
-            <StatBar />
-            
+            <div>
+            <HpBar />
             </div>
+
+            <div>
+            <AttackBar />
+            </div>
+
+            <div>
+            <DefenseBar />
+            </div>
+
+            <div>
+            <SpatkBar />
+            </div>
+
+            <div>
+            <SpdefBar />
+            </div>
+
+            <div>
+            <SpeedBar />
+            </div>
+
             <h3>Choose your archetype</h3>
             
 
