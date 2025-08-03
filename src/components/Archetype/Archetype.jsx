@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { pokemonByArchetype } from '../image-box-select/pokeByArchetype';
 import './Archetype.css';
+import { StatBar } from '../StatBar/StatBar';
 
 const archetypeToPokemon = {
     stall: 'toxapex',
@@ -20,13 +21,10 @@ export default function Archetype(){
 
     return(
         <section id='Archetype' className='archetype'>
-            <div className='arcPreview'>
-            {pokemonImage ? (
-                <img src={pokemonImage} alt={pokemonName} />
-            ) : (
-                <p className="placeholder">Pick an archetype below!</p>
-            )}
-                
+            <div>
+
+            <StatBar />
+            
             </div>
             <h3>Choose your archetype</h3>
             
