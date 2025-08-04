@@ -1,0 +1,111 @@
+.stat-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px auto;
+    
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .stat-label {
+    width: 60px;
+    font-weight: bold;
+    white-space: nowrap;
+    color:black;
+    text-align: right;
+  }
+
+/* HP bar */
+.hp-bar-container {
+
+    flex: 1;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 20px; 
+    overflow: hidden; 
+  }
+  
+  .hp-bar-filler {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.4s ease-in-out, background-color 0.3s ease;
+  
+  }
+
+  /* Attack Bar */
+  .attack-bar-container {
+    flex: 1;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 20px; 
+    overflow: hidden; 
+  }
+  
+  .attack-bar-filler { 
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.4s ease-in-out, background-color 0.3s ease;
+    
+  }
+
+  /* Defense Bar */
+  .defense-bar-container {
+    flex: 1;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 20px; 
+    overflow: hidden;  
+  }
+  
+  .defense-bar-filler {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.4s ease-in-out, background-color 0.3s ease;
+  }
+
+  /* Sp.Atk Bar */
+  .spatk-bar-container {
+    flex: 1;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 20px; 
+    overflow: hidden; 
+  }
+  
+  .spatk-bar-filler { 
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.4s ease-in-out, background-color 0.3s ease;
+  }
+
+  /* Sp.Def Bar */
+  .spdef-bar-container {
+    flex: 1;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 20px; 
+    overflow: hidden; 
+  }
+  
+  .spdef-bar-filler {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.4s ease-in-out, background-color 0.3s ease;
+  }
+
+  /* Speed Bar */
+  .speed-bar-container {
+    flex: 1;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 20px; 
+    overflow: hidden; 
+  }
+  
+  .speed-bar-filler { 
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.4s ease-in-out, background-color 0.3s ease;
+  }
