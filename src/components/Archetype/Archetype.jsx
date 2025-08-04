@@ -1,55 +1,91 @@
 import React, {useState} from 'react';
-import { pokemonByArchetype } from '../image-box-select/pokeByArchetype';
 import './Archetype.css';
+import { 
+    HpBar, AttackBar, DefenseBar,
+    SpatkBar, SpdefBar, SpeedBar
+} from '../StatBar/StatBar';
 
-import { HpBar } from '../StatBar/StatBar';
-import { AttackBar } from '../StatBar/StatBar';
-import { DefenseBar } from '../StatBar/StatBar';
-import { SpatkBar } from '../StatBar/StatBar';
-import { SpdefBar } from '../StatBar/StatBar';
-import { SpeedBar } from '../StatBar/StatBar';
+const statsByArchetype = {
+    empty: {
+      hp: 0, attack: 0, defense: 0, spatk: 0, spdef: 0, speed: 0
+    },
+    stall: {
+      hp: 90,       
+      attack: 25,  
+      defense: 100,  
+      spatk: 30,    
+      spdef: 100,    
+      speed: 20     
+    },
+    semiStall: {
+      hp: 75,       
+      attack: 35,   
+      defense: 80,  
+      spatk: 40,    
+      spdef: 80,    
+      speed: 35     
+    },
+    balance: {
+      hp: 60,       
+      attack: 60,   
+      defense: 60,  
+      spatk: 60,    
+      spdef: 60,    
+      speed: 60     
+    },
+    bulkyOff: {
+      hp: 65,       
+      attack: 90,   
+      defense: 55,  
+      spatk: 85,    
+      spdef: 50,    
+      speed: 45     
+    },
+    offense: {
+      hp: 60,       
+      attack: 95,   
+      defense: 30,  
+      spatk: 95,    
+      spdef: 30,    
+      speed: 75     
+    },
+    hyperOff: {
+      hp: 55,      
+      attack: 100,  
+      defense: 25,  
+      spatk: 100,   
+      spdef: 25,    
+      speed: 100    
+    }
+  };
+  
 
-
-export default function Archetype(){
-
-    const [arc, setArc] = useState('');
-
-    const pokemonName = arc ? archetypeToPokemon[arc] : null;
-    const pokemonImage = pokemonName ? pokemonByArchetype[pokemonName] : null
+  const StatSection = () => {
+    const [arc, setArc] = useState('empty');
+    const [lockedArc, setLockedArc] = useState(null);
+  
+    const currentStats = statsByArchetype[arc] || null;  
 
     return(
         <section id='Archetype' className='archetype'>
 
-            <div>
-            <HpBar />
-            </div>
-
-            <div>
-            <AttackBar />
-            </div>
-
-            <div>
-            <DefenseBar />
-            </div>
-
-            <div>
-            <SpatkBar />
-            </div>
-
-            <div>
-            <SpdefBar />
-            </div>
-
-            <div>
-            <SpeedBar />
-            </div>
+            {arc && currentStats && (
+                <div className="stat-bars-wrapper">
+                    <HpBar completed={currentStats.hp} />
+                    <AttackBar completed={currentStats.attack} />
+                    <DefenseBar completed={currentStats.defense} />
+                    <SpatkBar completed={currentStats.spatk} />
+                    <SpdefBar completed={currentStats.spdef} />
+                    <SpeedBar completed={currentStats.speed} />
+                </div>
+)}
 
             <h3>Choose your archetype</h3>
             
 
             <div className = 'arcControls'>
                 <select value = {arc} onChange = {e => setArc(e.target.value)}>
-                    <option value = "">-- pick one --</option>
+                    <option value = "empty">-- pick one --</option>
                     <option value = "stall">Stall</option>
                     <option value = "semiStall">Semi-Stall</option>
                     <option value = "balance">Balance</option>
@@ -57,10 +93,23 @@ export default function Archetype(){
                     <option value = "offense">Offense</option>
                     <option value = "hyperOff">Hyper-Offensive</option>
                 </select>
-                <button className = 'btn' disabled = {!arc} onClick ={() => alert(`You chose ${arc}!`)}>
+
+                <button
+                    className="btn"
+                    disabled={!arc}
+                    onClick={() => setLockedArc(arc)}
+                >
                     Select
                 </button>
             </div>
+
+            {lockedArc && (
+                <p className="locked-message">
+                    You locked in: <strong>{lockedArc}</strong>
+                </p>
+            )}
         </section>
     );
-}
+};
+
+export default StatSection;

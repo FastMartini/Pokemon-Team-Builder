@@ -28,9 +28,9 @@
   }
   
   .hp-bar-filler {
-    background-color: #4CAF50;
     height: 100%;
     border-radius: 5px;
+    transition: width 0.4s ease-in-out, background-color 0.3s ease;
   
   }
 
@@ -43,10 +43,10 @@
     overflow: hidden; 
   }
   
-  .attack-bar-filler {
-    background-color: #4CAF50; 
+  .attack-bar-filler { 
     height: 100%;
     border-radius: 5px;
+    transition: width 0.4s ease-in-out, background-color 0.3s ease;
     
   }
 
@@ -60,9 +60,9 @@
   }
   
   .defense-bar-filler {
-    background-color: #4CAF50; 
     height: 100%;
     border-radius: 5px;
+    transition: width 0.4s ease-in-out, background-color 0.3s ease;
   }
 
   /* Sp.Atk Bar */
@@ -74,10 +74,10 @@
     overflow: hidden; 
   }
   
-  .spatk-bar-filler {
-    background-color: #4CAF50; 
+  .spatk-bar-filler { 
     height: 100%;
     border-radius: 5px;
+    transition: width 0.4s ease-in-out, background-color 0.3s ease;
   }
 
   /* Sp.Def Bar */
@@ -90,9 +90,9 @@
   }
   
   .spdef-bar-filler {
-    background-color: #4CAF50;
     height: 100%;
     border-radius: 5px;
+    transition: width 0.4s ease-in-out, background-color 0.3s ease;
   }
 
   /* Speed Bar */
@@ -104,8 +104,8 @@
     overflow: hidden; 
   }
   
-  .speed-bar-filler {
-    background-color: #4CAF50; 
+  .speed-bar-filler { 
     height: 100%;
     border-radius: 5px;
+    transition: width 0.4s ease-in-out, background-color 0.3s ease;
   }
