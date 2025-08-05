@@ -5,9 +5,9 @@ export default function FinalTeam({ lockedArc, corePokemon }) {
   return (
     <section id='FinalTeam' className="final-team-container">
       <div className="header-row">
-        <div className="header">{lockedArc || "Archetype"}</div>
+        <div className="header">Your</div>
         <div className="header">{corePokemon || "Corepokemon"}</div>
-        <div className="header">team</div>
+        <div className="header">Team</div>
       </div>
       <div className="final-team-grid-wrapper">
         <div className="final-team-grid">
