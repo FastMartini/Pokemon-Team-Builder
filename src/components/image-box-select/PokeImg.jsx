@@ -3,12 +3,19 @@ import { pokeImages } from "./pokeImages";
 import "./PokeImg.css";
 
 export default function PokeImg({ pokemon }) {
-    return(
+    const imageUrl = pokeImages[pokemon];
+
+    return (
         <div className="corePreview">
-            {pokemon
-            ? <img src={pokeImages[pokemon]} alt={pokemon} />
-            : <p className="placeholder">Pick one below!</p>
-            }
+            {imageUrl ? (
+                <img
+                    src={imageUrl}
+                    alt={pokemon}
+                    className="floating-img"
+                />
+            ) : (
+                <p>Please select a Pokémon</p>
+            )}
         </div>
     );
 }
