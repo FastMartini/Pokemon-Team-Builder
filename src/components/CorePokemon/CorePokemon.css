@@ -1,6 +1,6 @@
 .corePokemon {
-    padding: 4em 2em;
     text-align: center;
+    justify-content: center;
 }
 
 .corePokemon .coreControls {

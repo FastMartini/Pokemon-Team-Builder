@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+.intro-container {
+  align-items: center;
+  justify-content: center;
+  padding-top: 10em;
+}
+
 .card {
   padding: 2em;
 }

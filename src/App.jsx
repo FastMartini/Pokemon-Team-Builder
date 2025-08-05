@@ -17,14 +17,19 @@ function App() {
         <Navbar />
         {/* Other components */}
       </div>
-    
-      <h1>Welcome to the Pokelab! Choose from a variety of Paldea's pokemon to create a team with.</h1>
+
+      <div className="intro-container">
+
+        <h1>Welcome to the Pokelab! Choose from a variety of Paldea's pokemon to create a team with.</h1>
       
-      <div className="card">
-        <a href="#core-pokemon" className='forge-btn'>
-          Forge your team
-        </a>
+        <div className="card">
+          <a href="#core-pokemon" className='forge-btn'>
+            Forge your team
+          </a>
+        </div>
+
       </div>
+
 
       <div>
         <Corepokemon pokemon={pokemon} setPokemon={setPokemon}/>
