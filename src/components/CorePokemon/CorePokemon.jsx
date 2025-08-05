@@ -4,7 +4,6 @@ import './CorePokemon.css';
 
 export default function CorePokemon({pokemon, setPokemon}) {
 
-
     return(
         <section id = 'core-pokemon' className = 'corePokemon'>
             
@@ -17,9 +16,9 @@ export default function CorePokemon({pokemon, setPokemon}) {
             <div className ='coreControls'>
                 <select value = {pokemon} onChange = {e => setPokemon(e.target.value)}>
                     <option value = "">-- pick one --</option>
-                    <option value = "sprigatito">Sprigatito</option>
-                    <option value = "fuecoco">Fuecoco</option>
-                    <option value = "quaxly">Quaxly</option>
+                    <option value = "Sprigatito">Sprigatito</option>
+                    <option value = "Fuecoco">Fuecoco</option>
+                    <option value = "Quaxly">Quaxly</option>
                 </select>
                 <button className='btn' disabled={!pokemon} onClick={() => {
                     alert(`You chose ${pokemon}!`);
