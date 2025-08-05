@@ -1,0 +1,48 @@
+.final-team-container {
+  min-height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10em
+}
+
+.header-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.header {
+  font-family: 'Indie Flower', 'Comic Sans MS', cursive, sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #222;
+}
+
+.team-box {
+  border: 1px solid #222;
+  border-radius: 0.5rem;
+  background: #fff;
+  width: 180px;
+  height: 180px;
+}
+
+.final-team-grid-wrapper {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.final-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 180px);
+  grid-template-rows: repeat(2, 180px);
+  gap: 2rem;
+}
+

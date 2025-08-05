@@ -17,7 +17,7 @@ const statsByArchetype = {
       spdef: 100,    
       speed: 20     
     },
-    semiStall: {
+    SemiStall: {
       hp: 75,       
       attack: 35,   
       defense: 80,  
@@ -25,7 +25,7 @@ const statsByArchetype = {
       spdef: 80,    
       speed: 35     
     },
-    balance: {
+    Balanced: {
       hp: 60,       
       attack: 60,   
       defense: 60,  
@@ -33,7 +33,7 @@ const statsByArchetype = {
       spdef: 60,    
       speed: 60     
     },
-    bulkyOff: {
+    BulkyOffense: {
       hp: 65,       
       attack: 90,   
       defense: 55,  
@@ -41,7 +41,7 @@ const statsByArchetype = {
       spdef: 50,    
       speed: 45     
     },
-    offense: {
+    Offense: {
       hp: 60,       
       attack: 95,   
       defense: 30,  
@@ -49,7 +49,7 @@ const statsByArchetype = {
       spdef: 30,    
       speed: 75     
     },
-    hyperOff: {
+    HyperOffense: {
       hp: 55,      
       attack: 100,  
       defense: 25,  
@@ -60,10 +60,9 @@ const statsByArchetype = {
   };
   
 
-  const StatSection = () => {
+  const StatSection = ({ lockedArc, setLockedArc }) => {
     const [arc, setArc] = useState('empty');
-    const [lockedArc, setLockedArc] = useState(null);
-  
+ 
     const currentStats = statsByArchetype[arc] || null;  
 
     return(
@@ -87,17 +86,19 @@ const statsByArchetype = {
                 <select value = {arc} onChange = {e => setArc(e.target.value)}>
                     <option value = "empty">-- pick one --</option>
                     <option value = "stall">Stall</option>
-                    <option value = "semiStall">Semi-Stall</option>
-                    <option value = "balance">Balance</option>
-                    <option value = "bulkyOff">Bulky-Offensive</option>
-                    <option value = "offense">Offense</option>
-                    <option value = "hyperOff">Hyper-Offensive</option>
+                    <option value = "SemiStall">Semi-Stall</option>
+                    <option value = "Balanced">Balance</option>
+                    <option value = "BulkyOffense">Bulky-Offensive</option>
+                    <option value = "Offense">Offense</option>
+                    <option value = "HyperOffense">Hyper-Offensive</option>
                 </select>
 
                 <button
                     className="btn"
                     disabled={!arc}
-                    onClick={() => setLockedArc(arc)}
+                    onClick={() => {setLockedArc(arc)
+                    document.getElementById('FinalTeam')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                 >
                     Select
                 </button>
