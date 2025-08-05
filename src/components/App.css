@@ -5,34 +5,6 @@
   text-align: center;
 }
 
-.intro-container {
-  align-items: center;
-  justify-content: center;
-  padding-top: 10em;
-}
-
-.card {
-  padding: 2em;
-}
-
-.forge-btn {
-  display: inline-block;
-  margin: 4em 0;
-  padding: 0.75em 1.5em;
-  background-color: black;
-  color: #fff;
-  border-radius: 25px;
-  text-decoration: none;
-  font-size: 1em;
-  cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.forge-btn:hover {
-  transform: scale(1.1);
-  color: red;
-}
-
 .read-the-docs {
   color: #888;
 }

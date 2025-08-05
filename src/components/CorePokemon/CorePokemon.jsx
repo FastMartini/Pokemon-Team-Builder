@@ -9,7 +9,7 @@ export default function CorePokemon({pokemon, setPokemon}) {
             
             <PokeImg pokemon={pokemon} />
 
-            <h2>Choose your core Pokemon</h2>
+            <h2>Choose Your Core Pokémon</h2>
 
             
 

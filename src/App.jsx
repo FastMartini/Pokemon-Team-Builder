@@ -3,8 +3,8 @@ import Navbar from './components/Navbar/Navbar'
 import Corepokemon from './components/CorePokemon/CorePokemon'
 import Archetype from './components/Archetype/Archetype'
 import FinalTeam from './components/FinalTeam/FinalTeam'
+import Hero from './components/Hero/Hero';
 import './components/App.css'
-
 
 function App() {
 
@@ -18,16 +18,8 @@ function App() {
         {/* Other components */}
       </div>
 
-      <div className="intro-container">
-
-        <h1>Welcome to the Pokelab! Choose from a variety of Paldea's pokemon to create a team with.</h1>
-      
-        <div className="card">
-          <a href="#core-pokemon" className='forge-btn'>
-            Forge your team
-          </a>
-        </div>
-
+      <div>
+        <Hero />
       </div>
 
 

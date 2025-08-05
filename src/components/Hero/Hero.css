@@ -1,0 +1,76 @@
+/* === Main Hero Layout === */
+
+.intro-wrapper {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .intro-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10em;
+    text-align: center;
+  }
+  
+  .card {
+    padding: 2em;
+  }
+  
+  .forge-btn {
+    display: inline-block;
+    margin: 4em 0;
+    padding: 0.75em 1.5em;
+    background-color: black;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  .forge-btn:hover {
+    transform: scale(1.1);
+    color: red;
+  }
+  
+  /* === Falling Poké Balls === */
+  
+  .pokeball-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .pokeball {
+    position: absolute;
+    top: -40px;
+    width: 50px;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    filter: blur(0.3px);
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-40px) rotate(0deg);
+      
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+     
+    }
+  }
+  
