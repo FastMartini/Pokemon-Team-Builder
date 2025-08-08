@@ -1,11 +1,9 @@
-// src/components/FinalTeam/FinalTeam.jsx
 import React, { useState } from 'react';
 import './FinalTeam.css';
 import { pokeImages } from '../image-box-select/pokeImages';
-import PokeStats from '../Team-card/PokeStats';   // ← use your actual stats file
+import PokeStats from '../PokeStats/PokeStats';  
 
 export default function FinalTeam({ lockedArc, corePokemon }) {
-  // track flipped state for each of the 6 boxes
   const [flipped, setFlipped] = useState(Array(6).fill(false));
   const toggleFlip = (i) =>
     setFlipped(f => {
@@ -25,7 +23,6 @@ export default function FinalTeam({ lockedArc, corePokemon }) {
       <div className="final-team-grid-wrapper">
         <div className="final-team-grid">
           {Array.from({ length: 6 }).map((_, i) => {
-            // decide which Pokémon is in this slot
             const name = i === 0 ? corePokemon : null;
             const stats = name ? PokeStats[name] : null;
 
@@ -36,8 +33,6 @@ export default function FinalTeam({ lockedArc, corePokemon }) {
                 onClick={() => toggleFlip(i)}
               >
                 <div className="flip-inner">
-
-                  {/* FRONT: your existing image logic */}
                   <div className="flip-front">
                     {name && pokeImages[name] && (
                       <img
@@ -52,7 +47,6 @@ export default function FinalTeam({ lockedArc, corePokemon }) {
                     )}
                   </div>
 
-                  {/* BACK: stats from PokeStats */}
                   <div className="flip-back">
                     <h4>{name ? `${name} Stats` : 'No Pokémon'}</h4>
                     <ul>
