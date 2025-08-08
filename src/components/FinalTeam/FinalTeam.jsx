@@ -16,7 +16,7 @@ export default function FinalTeam({ lockedArc, corePokemon }) {
     <section id="FinalTeam" className="final-team-container">
       <div className="header-row">
         <div className="header">Your</div>
-        <div className="header">{corePokemon || "Core Pokémon"}</div>
+        <div className="header">{corePokemon || "Corepokemon"}</div>
         <div className="header">Team</div>
       </div>
 
