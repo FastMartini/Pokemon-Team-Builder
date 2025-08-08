@@ -34,7 +34,7 @@ export default function FinalTeam({ lockedArc, corePokemon }) {
               >
                 <div className="flip-inner">
                   <div className="flip-front">
-                    {name && pokeImages[name] && (
+                    {name && pokeImages[name] ? (
                       <img
                         src={pokeImages[name]}
                         alt={name}
@@ -44,6 +44,8 @@ export default function FinalTeam({ lockedArc, corePokemon }) {
                           objectFit: 'contain',
                         }}
                       />
+                    ) : (
+                      <span className='empty-msg'>No Pokemon</span>
                     )}
                   </div>
 
