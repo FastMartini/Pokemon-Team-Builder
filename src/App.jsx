@@ -13,28 +13,17 @@ function App() {
   
   return (
     <>
-      <div>
+      <Hero />
+
+      <Corepokemon pokemon={pokemon} setPokemon={setPokemon}/>
+
+      <div id="main-content">
         <Navbar />
-        {/* Other components */}
-      </div>
-
-      <div>
-        <Hero />
-      </div>
-
-
-      <div>
-        <Corepokemon pokemon={pokemon} setPokemon={setPokemon}/>
-      </div>
-
-      <div>
         <Archetype lockedArc={lockedArc} setLockedArc={setLockedArc} />
-
-      </div>
-
-      <div>
         <FinalTeam corePokemon={pokemon} lockedArc={lockedArc}/>
-
+        <p className="read-the-docs">
+          Click on the 'About Us' tab to learn more
+        </p>
       </div>
 
       <p className="read-the-docs">

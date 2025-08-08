@@ -2,12 +2,19 @@
 
 .intro-wrapper {
     position: relative;
+    left:0;
     height: 100vh;
+    width: 100vw;
     overflow: hidden;
-    background-color: white;
+    background-color: #ffffff; /* white base */
+    background-image:
+      linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 40px 40px; /* grid size */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
   }
-  
+
   .intro-container {
     position: relative;
     z-index: 1;
@@ -65,12 +72,11 @@
   
   @keyframes fall {
     0% {
-      transform: translateY(-40px) rotate(0deg);
-      
+      transform: translateY(-40px) rotate(0deg);   
     }
     100% {
       transform: translateY(100vh) rotate(360deg);
-     
+      opacity: 0.01;  
     }
   }
   
