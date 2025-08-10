@@ -1,45 +1,71 @@
 .corePokemon {
+    position: relative;
+    overflow: hidden;
     text-align: center;
     justify-content: center;
-}
+    min-height: 70vh; /* space for bg */
+  }
 
-.corePokemon .coreControls {
-    margin-top: 1.5em;
-}
-
-.corePokemon select {
+/* Light lab-style default that matches your hero */
+.default-bg {
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  .default-bg::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,36,91,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,36,91,0.03) 1px, transparent 1px);
+    background-size: 44px 44px;
+    z-index: 0;
+  }
+  .default-bg::after {
+    content: "";
+    position: absolute; inset: -10%;
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.06) 100%);
+    pointer-events: none; z-index: 0;
+  }
+  
+  /* Image background for typed selections */
+  .core-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    animation: bgFade 300ms ease-out;
+    z-index: 0;
+  }
+  @keyframes bgFade { from { opacity: 0; transform: scale(1.02);} to { opacity: 1; transform: scale(1);} }
+  
+  /* Optional readability layer (tune alpha) */
+  .core-bg-overlay { position: absolute; inset: 0; background: rgba(255,255,255,0.35); z-index: 1; }
+  
+  /* Foreground content above bg */
+  .core-content { position: relative; z-index: 2; }
+  
+  /* Existing styles (kept) */
+  .corePokemon .coreControls { margin-top: 1.5em; }
+  
+  .corePokemon select {
     padding: 0.5em;
     font-size: 1em;
-}
-
-.corePokemon button {
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+  }
+  
+  .corePokemon button {
     margin-left: 1em;
     padding: 0.6em 1em;
     font-size: 1em;
     border-radius: 8px;
     color: white;
     transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.corePokemon button:hover {
-    transform: scale(1.1);
-    color: red;
   }
 
-#core-pokemon {
-    padding-top: 300px;
-    margin-top: 300px;
-}
+  .corePokemon button:hover { transform: scale(1.1); color: red; }
+  
+  #core-pokemon { padding-top: 300px; margin-top: 300px; }
 
-#core-pokemon select {
-    background-color: white;
-    color: black;
-    padding: 0.5em;
-    font-size: 1em;
-    border-radius: 25px;
-}
-
-#core-pokemon h2 {
-    color: black;
-    font-size: 2em;
-}
+  #core-pokemon h2 { color: black; font-size: 2em; }
+  
