@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './FinalTeam.css';
-import { pokeImages } from '../image-box-select/pokeImages';
+import { pokeImages } from "../../data/pokeImages";
 import PokeStats from '../PokeStats/PokeStats';  
 
 export default function FinalTeam({ lockedArc, corePokemon }) {
