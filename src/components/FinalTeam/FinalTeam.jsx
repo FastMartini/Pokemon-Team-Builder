@@ -1,5 +1,5 @@
 import './FinalTeam.css';
-import { pokeImages } from '../image-box-select/pokeImages'; // adjust path if needed
+import { pokeImages } from '../../data/pokeImages'; // adjust path if needed
 
 export default function FinalTeam({ lockedArc, corePokemon }) {
   return (
