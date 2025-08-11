@@ -6,7 +6,7 @@
     min-height: 70vh; /* space for bg */
   }
 
-/* Light lab-style default that matches your hero */
+/* Light lab-style default that matches hero */
 .default-bg {
     position: relative;
     background-color: #fff;
@@ -65,7 +65,7 @@
 
   .corePokemon button:hover { transform: scale(1.1); color: red; }
   
-  #core-pokemon { padding-top: 300px; margin-top: 300px; }
+  #core-pokemon { padding-top: 300px; margin-top: 0; }
 
   #core-pokemon h2 { color: black; font-size: 2em; }
   
