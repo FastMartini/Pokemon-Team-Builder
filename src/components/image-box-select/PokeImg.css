@@ -61,6 +61,7 @@
   .floating-img {
     animation: jumpWiggle 2s ease-in-out infinite;
     position: relative;
+    padding-top: 25px;
     width: 300px;
     height: 300px;
     display: flex;

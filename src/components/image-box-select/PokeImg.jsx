@@ -1,5 +1,5 @@
 import React from "react";
-import { pokeImages } from "./pokeImages";
+import { pokeImages } from "../../data/pokeImages";
 import "./PokeImg.css";
 
 export default function PokeImg({ pokemon }) {
@@ -14,7 +14,7 @@ export default function PokeImg({ pokemon }) {
             className="floating-img"
           />
         ) : (  
-            
+
             <p>Please select a Pokémon</p>
         )}
         </div>
