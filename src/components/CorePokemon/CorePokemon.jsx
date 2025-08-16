@@ -3,6 +3,7 @@ import PokeImg from '../image-box-select/PokeImg';
 import './CorePokemon.css';
 import { pokemonTypes } from '../../data/pokemonTypes';
 import { typeBackgrounds } from '../../assets/typeBackgrounds';
+import { pokedex } from '../../data/pokedex';
 
 export default function CorePokemon({ pokemon, setPokemon }) {
   const types = pokemonTypes[pokemon] || [];

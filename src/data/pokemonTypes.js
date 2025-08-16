@@ -5,4 +5,4 @@ export const pokemonTypes = {
     Quaxly:     ['water'],
     // add more here; for dual types, e.g. Charizard: ['fire','flying']
   };
-  
+  pp

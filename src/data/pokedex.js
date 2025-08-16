@@ -1,7 +1,7 @@
-// src/data/pokemonDexNumbers.js
-export const pokedex = {
-    Sprigatito: 906,
-    Fuecoco: 909,
-    Quaxly: 912,
-    // Add more here
-};
+// src/data/pokedex.js
+export const pokedex = [
+    { name: "Sprigatito", number: 906 },
+    { name: "Fuecoco", number: 909 },
+    { name: "Quaxly", number: 912 },
+    // Add more Pokémon here
+  ];
