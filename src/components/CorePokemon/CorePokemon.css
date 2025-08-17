@@ -68,4 +68,42 @@
   #core-pokemon { padding-top: 300px; margin-top: 0; }
 
   #core-pokemon h2 { color: black; font-size: 2em; }
+
+  .dexNav {
+    display: flex;
+    justify-content: center;
+    gap: 6em;
+    margin-top: 2.5em;
+    transform: translateX(-12px);
+  }
+  
+  /* Shared arrow button styles */
+  .dexNav button {
+    position: relative;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-right: 2em;
+    padding: 30px 80px;   /* controls body size */
+    border: none;
+    cursor: pointer;
+    background: black;
+    clip-path: polygon(
+      0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%
+    );
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  
+  .arrow-btn:hover {
+    transform: scale(1.08);
+  }
+  
+  /* Flip for left arrow */
+  .arrow-btn.left {
+    clip-path: polygon(
+      15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%
+    );
+  }
+
+  
   

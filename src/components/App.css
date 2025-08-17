@@ -5,6 +5,18 @@
   text-align: center;
 }
 
+/* body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: red;  // guide color 
+  z-index: 9999;    // always on top 
+  pointer-events: none; // so it doesn’t block clicks
+} */
+
 .read-the-docs {
   color: #888;
 }
