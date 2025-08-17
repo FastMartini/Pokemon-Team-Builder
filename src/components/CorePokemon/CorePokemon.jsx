@@ -2,7 +2,7 @@ import React from 'react';
 import PokeImg from '../image-box-select/PokeImg';
 import './CorePokemon.css';
 import { pokemonTypes } from '../../data/pokemonTypes';
-import { typeBackgrounds } from '../../../public/assets/typeBackgrounds';
+import { typeBackgrounds } from '../../assets/typeBackgrounds';
 
 export default function CorePokemon({ pokemon, setPokemon }) {
   const types = pokemonTypes[pokemon] || [];
