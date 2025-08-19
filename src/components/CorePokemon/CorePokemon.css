@@ -55,7 +55,6 @@
   }
   
   .corePokemon button {
-    margin-left: 1em;
     padding: 0.6em 1em;
     font-size: 1em;
     border-radius: 8px;
@@ -67,42 +66,61 @@
   
   #core-pokemon { padding-top: 300px; margin-top: 0; }
 
-  #core-pokemon h2 { color: black; font-size: 2em; }
+  #core-pokemon h2 { 
+    color: black; 
+    font-size: 2em;
+    margin-top: -1em;
+  }
 
   .dexNav {
     display: flex;
     justify-content: center;
-    gap: 6em;
-    margin-top: 2.5em;
-    transform: translateX(-12px);
+    gap: 40px; 
+    margin-top: -0.5em;
+    
   }
   
   /* Shared arrow button styles */
-  .dexNav button {
-    position: relative;
-    color: white;
-    font-size: 1.5em;
+  .arrow-btn {
+    min-width: 120px;   /* make both buttons same width */
+    height: 60px;
+    font-size: 1.5rem;
     font-weight: bold;
-    padding-right: 2em;
-    padding: 30px 80px;   /* controls body size */
-    border: none;
-    cursor: pointer;
-    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     clip-path: polygon(
       0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%
     );
     transition: background 0.2s ease, transform 0.2s ease;
   }
   
-  .arrow-btn:hover {
-    transform: scale(1.08);
-  }
+  /* Left button moves left on hover */
+.arrow-btn.left:hover {
+  transform: translateX(-10px);
+}
+
+/* Right button moves right on hover */
+.arrow-btn.right:hover {
+  transform: translateX(10px);
+}
   
   /* Flip for left arrow */
   .arrow-btn.left {
     clip-path: polygon(
       15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%
     );
+  }
+
+ 
+
+  .dexInfo {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    min-width: 150px; /* keeps layout stable */
+    margin-top: 12px;  
   }
 
   
