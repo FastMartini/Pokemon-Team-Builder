@@ -22,7 +22,7 @@ function App() {
         <Archetype lockedArc={lockedArc} setLockedArc={setLockedArc} />
         <FinalTeam corePokemon={pokemon} lockedArc={lockedArc}/>
         <p className="read-the-docs">
-          Click on the 'About Us' tab to learn more
+        Pokémon are registered trademarks of Nintendo and Game Freak.
         </p>
       </div>
 
