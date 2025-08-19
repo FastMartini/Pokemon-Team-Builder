@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './FinalTeam.css';
 import { pokeImages } from "../../data/pokeImages";
-import PokeStats from '../../data/PokeStats';  
+import PokeStats from '../../data/pokeStats';  
 
 export default function FinalTeam({ lockedArc, corePokemon }) {
   const [flipped, setFlipped] = useState(Array(6).fill(false));

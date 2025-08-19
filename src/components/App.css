@@ -5,7 +5,7 @@
   text-align: center;
 }
 
-body::before {
+/*body::before {
   content: "";
   position: fixed;
   top: 0;
@@ -15,7 +15,7 @@ body::before {
   background: red;  
   z-index: 9999;   
   pointer-events: none; 
-} 
+} */
 
 .read-the-docs {
   color: #888;
