@@ -5,6 +5,18 @@
   text-align: center;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: red;  
+  z-index: 9999;   
+  pointer-events: none; 
+} 
+
 .read-the-docs {
   color: #888;
 }
