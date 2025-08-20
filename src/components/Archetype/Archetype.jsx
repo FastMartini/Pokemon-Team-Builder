@@ -66,22 +66,23 @@ const statsByArchetype = {
     const currentStats = statsByArchetype[arc] || null;  
 
     return(
-        <section id='Archetype' className='archetype'>
+        <section id='Archetype' className="archetype">
+
+          <div className="archetype-inner">
 
             {arc && currentStats && (
-                <div className="stat-bars-wrapper">
-                    <HpBar completed={currentStats.hp} />
-                    <AttackBar completed={currentStats.attack} />
-                    <DefenseBar completed={currentStats.defense} />
-                    <SpatkBar completed={currentStats.spatk} />
-                    <SpdefBar completed={currentStats.spdef} />
-                    <SpeedBar completed={currentStats.speed} />
-                </div>
-)}
+              <div className="stat-bars-wrapper">
+                  <HpBar completed={currentStats.hp} />
+                  <AttackBar completed={currentStats.attack} />
+                  <DefenseBar completed={currentStats.defense} />
+                  <SpatkBar completed={currentStats.spatk} />
+                  <SpdefBar completed={currentStats.spdef} />
+                  <SpeedBar completed={currentStats.speed} />
+              </div>
+            )}
 
             <h3>Choose your archetype</h3>
             
-
             <div className = 'arcControls'>
                 <select value = {arc} onChange = {e => setArc(e.target.value)}>
                     <option value = "empty">-- pick one --</option>
@@ -109,6 +110,9 @@ const statsByArchetype = {
                     You locked in: <strong>{lockedArc}</strong>
                 </p>
             )}
+
+          </div>
+            
         </section>
     );
 };
