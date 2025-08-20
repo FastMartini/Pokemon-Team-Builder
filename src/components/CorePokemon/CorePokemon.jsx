@@ -15,40 +15,74 @@ export default function CorePokemon({ pokemon, setPokemon }) {
     []
   );
 
-  // 2) Track current index (derived from current `pokemon`)
+  // 2) Build a reverse lookup: number → name
+  //    - This lets us search by Pokédex number easily
+  const nameByNumber = useMemo(() => {
+    const m = {};
+    for (const [name, num] of Object.entries(pokedex)) m[num] = name;
+    return m;
+  }, []);
+
+  // 3) Track current index (derived from current `pokemon`)
+  //    - If a pokemon prop is already set, use its index
+  //    - Otherwise default to 0
   const [idx, setIdx] = useState(() => {
     const i = dexOrder.indexOf(pokemon);
     return i >= 0 ? i : 0;
   });
 
-  // 3) Sync idx when `pokemon` changes externally (e.g., dropdown)
+  // 4) Sync idx when `pokemon` changes externally (e.g., dropdown)
   useEffect(() => {
     const i = dexOrder.indexOf(pokemon);
     if (i >= 0 && i !== idx) setIdx(i);
   }, [pokemon, dexOrder, idx]);
 
-  // 4) Ensure we have a default selection on first load
+  // 5) Ensure we have a default selection on first load
   useEffect(() => {
     if (!pokemon && dexOrder.length) setPokemon(dexOrder[0]);
   }, [pokemon, dexOrder, setPokemon]);
 
-  // 5) Current pokemon name + type background
+  // 6) Current pokemon name + type background
   const currentName = dexOrder[idx] || '';
   const types = pokemonTypes[currentName] || [];
   const primaryType = types[0] || 'default';
   const bgUrl = typeBackgrounds[primaryType] || typeBackgrounds.default;
 
-  // 6) Navigation handlers (wrap-around)
+  // 7) Navigation handlers (wrap-around)
   const goNext = () => {
     const next = (idx + 1) % dexOrder.length;
     setIdx(next);
     setPokemon(dexOrder[next]);
   };
 
+
   const goPrev = () => {
     const prev = (idx - 1 + dexOrder.length) % dexOrder.length;
     setIdx(prev);
     setPokemon(dexOrder[prev]);
+  };
+
+  // 8) Search bar logic
+  //    - User can type a name or number (e.g. "25" or "#25" or "Pika")
+  //    - If numeric, convert to a number and lookup via nameByNumber
+  //    - If text, find the first match in dexOrder ignoring case
+  const [query, setQuery] = useState('');
+  const onSearch = (e) => {
+    e.preventDefault();
+    const q = query.trim();
+    if (!q) return;
+
+    // Case A: Numeric search ("25" or "#25")
+    const num = Number(q.replace(/^#/, ''));
+    if (!Number.isNaN(num) && nameByNumber[num]) {
+      setPokemon(nameByNumber[num]);
+      return;
+    }
+
+    // Case B: Name search (case-insensitive, partial match allowed)
+    const lower = q.toLowerCase();
+    const found = dexOrder.find(n => n.toLowerCase().includes(lower));
+    if (found) setPokemon(found);
   };
 
   return (
@@ -85,6 +119,17 @@ export default function CorePokemon({ pokemon, setPokemon }) {
         </div>
 
         <div className="coreControls">
+
+          {/* Search form (submit on enter) */}
+          <form className="coreSearch" onSubmit={onSearch}>
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search name or #"
+              aria-label="Search Pokémon"
+            />
+          </form>
          
           {/* Button confirms the selection */}
           <button
