@@ -72,6 +72,14 @@
     margin-top: -1em;
   }
 
+  .coreControls { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .coreSearch input {
+    min-width: 220px; padding: 0.6em 0.8em; border-radius: 8px;
+    border: 1px solid #ccc; font-size: 1rem; outline: none;
+  }
+  .coreSearch input:focus { border-color: #3b4cca; box-shadow: 0 0 0 3px rgba(59,76,202,0.15); }
+
+
   .dexNav {
     display: flex;
     justify-content: center;
