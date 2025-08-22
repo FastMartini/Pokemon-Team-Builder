@@ -1,4 +1,7 @@
 export default {
+
+  // Kanto Pokemon
+
   Bulbasaur: { hp: 45, attack: 49, defense: 49, spAtk: 65, spDef: 65, speed: 45 },
   Ivysaur: { hp: 60, attack: 62, defense: 63, spAtk: 80, spDef: 80, speed: 60 },
   Venusaur: { hp: 80, attack: 82, defense: 83, spAtk: 100, spDef: 100, speed: 80 },
@@ -119,7 +122,7 @@ export default {
   Seaking: { hp: 80, attack: 92, defense: 65, spAtk: 65, spDef: 80, speed: 68 },
   Staryu: { hp: 30, attack: 45, defense: 55, spAtk: 70, spDef: 55, speed: 85 },
   Starmie: { hp: 60, attack: 75, defense: 85, spAtk: 100, spDef: 85, speed: 115 },
-  "Mr.Mime": { hp: 40, attack: 45, defense: 65, spAtk: 100, spDef: 120, speed: 90 },
+  "Mr. Mime": { hp: 40, attack: 45, defense: 65, spAtk: 100, spDef: 120, speed: 90 },
   Scyther: { hp: 70, attack: 110, defense: 80, spAtk: 55, spDef: 80, speed: 105 },
   Jynx: { hp: 65, attack: 50, defense: 35, spAtk: 115, spDef: 95, speed: 95 },
   Electabuzz: { hp: 65, attack: 83, defense: 57, spAtk: 95, spDef: 85, speed: 105 },
@@ -149,4 +152,7 @@ export default {
   Dragonite: { hp: 91, attack: 134, defense: 95, spAtk: 100, spDef: 100, speed: 80 },
   Mewtwo: { hp: 106, attack: 110, defense: 90, spAtk: 154, spDef: 90, speed: 130 },
   Mew: { hp: 100, attack: 100, defense: 100, spAtk: 100, spDef: 100, speed: 100 },
+
+  // Johto Pokemon
+  
 };
