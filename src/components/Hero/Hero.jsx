@@ -9,7 +9,7 @@ export default function Hero() {
 
       <div className="intro-container">
         <h1>
-          Welcome to the Pokelab! Choose from a variety of Paldea's Pokémon to create a team with.
+          Welcome to the Pokelab! Choose from a variety of Pokémon to create a team with.
         </h1>
 
         <div className="card">
