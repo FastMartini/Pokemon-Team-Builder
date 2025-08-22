@@ -1,7 +1,7 @@
 export default {
 
   // Kanto Pokemon
-
+  
   Bulbasaur: { hp: 45, attack: 49, defense: 49, spAtk: 65, spDef: 65, speed: 45 },
   Ivysaur: { hp: 60, attack: 62, defense: 63, spAtk: 80, spDef: 80, speed: 60 },
   Venusaur: { hp: 80, attack: 82, defense: 83, spAtk: 100, spDef: 100, speed: 80 },
