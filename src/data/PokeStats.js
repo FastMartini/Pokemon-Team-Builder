@@ -1,3 +1,19 @@
+import { applyNature } from "./natureUtils.js";
+
+export const ARCHETYPE_TO_NATURE = {
+  "stall": "Bold",
+  "SemiStall": "Calm",
+  "Balanced": "Hardy",
+  "BulkyOffense": "Adamant",
+  "Offense": "Naive",
+  "HyperOffense": "Timid"
+};
+
+export function getAdjustedStatsForArchetype(baseStats, archetype) {
+  const nature = ARCHETYPE_TO_NATURE[archetype] || "Hardy";
+  return applyNature(baseStats, nature);
+}
+
 export default {
 
   // Kanto Pokemon
@@ -122,7 +138,7 @@ export default {
   Seaking: { hp: 80, attack: 92, defense: 65, spAtk: 65, spDef: 80, speed: 68 },
   Staryu: { hp: 30, attack: 45, defense: 55, spAtk: 70, spDef: 55, speed: 85 },
   Starmie: { hp: 60, attack: 75, defense: 85, spAtk: 100, spDef: 85, speed: 115 },
-  "Mr. Mime": { hp: 40, attack: 45, defense: 65, spAtk: 100, spDef: 120, speed: 90 },
+  "Mr.Mime": { hp: 40, attack: 45, defense: 65, spAtk: 100, spDef: 120, speed: 90 },
   Scyther: { hp: 70, attack: 110, defense: 80, spAtk: 55, spDef: 80, speed: 105 },
   Jynx: { hp: 65, attack: 50, defense: 35, spAtk: 115, spDef: 95, speed: 95 },
   Electabuzz: { hp: 65, attack: 83, defense: 57, spAtk: 95, spDef: 85, speed: 105 },
@@ -156,3 +172,4 @@ export default {
   // Johto Pokemon
   
 };
+

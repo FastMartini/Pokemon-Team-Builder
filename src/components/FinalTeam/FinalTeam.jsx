@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './FinalTeam.css';
-import { pokeImages } from "../../data/pokeImages";
-import PokeStats from '../../data/PokeStats';  
+import { pokeImages } from "../../data/pokeImages"; 
+import PokeStats, { getAdjustedStatsForArchetype } from '../../data/PokeStats';
 
 export default function FinalTeam({ lockedArc, corePokemon }) {
   const [flipped, setFlipped] = useState(Array(6).fill(false));
@@ -24,7 +24,7 @@ export default function FinalTeam({ lockedArc, corePokemon }) {
         <div className="final-team-grid">
           {Array.from({ length: 6 }).map((_, i) => {
             const name = i === 0 ? corePokemon : null;
-            const stats = name ? PokeStats[name] : null;
+            const stats = name ? getAdjustedStatsForArchetype(PokeStats[name], lockedArc) : null;
 
             return (
               <div
