@@ -102,3 +102,13 @@
 .flip-back li {
   margin-bottom: 0.2rem;
 }
+
+.nature-pill {
+  display: inline-block;
+  padding: px 10px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 6px 0 10px;
+}

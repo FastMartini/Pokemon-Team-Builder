@@ -58,12 +58,21 @@ const statsByArchetype = {
       speed: 100    
     }
   };
+
+const LABEL_TO_STATS_KEY = {
+  "Stall": "stall",
+  "Semi-Stall": "SemiStall",
+  "Balance": "Balanced",
+  "Bulky Offense": "BulkyOffense",
+  "Offense": "Offense",
+  "Hyper Offense": "HyperOffense",
+};
   
 
-  const StatSection = ({ lockedArc, setLockedArc }) => {
-    const [arc, setArc] = useState('empty');
- 
-    const currentStats = statsByArchetype[arc] || null;  
+export default function StatSection({ lockedArc, setLockedArc }) {
+  const [arc, setArc] = useState("empty");
+  const statsKey = LABEL_TO_STATS_KEY[arc] ?? arc;
+  const currentStats = statsByArchetype[statsKey] || null;
 
     return(
         <section id='Archetype' className="archetype">
@@ -97,9 +106,7 @@ const statsByArchetype = {
                 <button
                     className="btn"
                     disabled={!arc}
-                    onClick={() => {setLockedArc(arc)
-                    document.getElementById('FinalTeam')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
+                    onClick={() => {setLockedArc(arc)}}
                 >
                     Select
                 </button>
@@ -117,4 +124,4 @@ const statsByArchetype = {
     );
 };
 
-export default StatSection;
+
