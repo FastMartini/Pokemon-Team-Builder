@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './FinalTeam.css';
 import { pokeImages } from "../../data/pokeImages"; 
-import PokeStats, { getAdjustedStatsForArchetype } from '../../data/PokeStats';
+import PokeStats, { getAdjustedStatsForArchetype, ARCHETYPE_TO_NATURE } from '../../data/PokeStats';
+import { natures } from '../../data/natures';
+import { applyNature } from '../../data/natureUtils';
 
-export default function FinalTeam({ lockedArc, corePokemon }) {
+export default function FinalTeam({ lockedArc, corePokemon, selectedNature }) {
   const [flipped, setFlipped] = useState(Array(6).fill(false));
   const toggleFlip = (i) =>
     setFlipped(f => {
@@ -24,7 +26,10 @@ export default function FinalTeam({ lockedArc, corePokemon }) {
         <div className="final-team-grid">
           {Array.from({ length: 6 }).map((_, i) => {
             const name = i === 0 ? corePokemon : null;
-            const stats = name ? getAdjustedStatsForArchetype(PokeStats[name], lockedArc) : null;
+            const selectedArch = lockedArc || 'Balanced';
+            const natureName = selectedNature || ARCHETYPE_TO_NATURE?.[lockedArc] || 'Hardy';
+            const base = name ? PokeStats[name] : null;
+            const stats = name ? applyNature(base, natureName) : null;
 
             return (
               <div
@@ -51,7 +56,11 @@ export default function FinalTeam({ lockedArc, corePokemon }) {
 
                   <div className="flip-back">
                     <h4>{name ? `${name} Stats` : 'No Pokémon'}</h4>
+
                     <ul>
+                      {name && (
+                      <li>Nature: {natureName}</li>
+                    )}
                       {stats
                         ? Object.entries(stats).map(([stat, val]) => (
                             <li key={stat}>
