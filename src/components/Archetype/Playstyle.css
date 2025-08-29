@@ -1,0 +1,104 @@
+.playstyle {
+  position: relative;
+
+  /* full-bleed trick (break out of parent max-width) */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  /* vertical spacing only */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  min-height: 100vh;       /* keeps it full screen height */
+  padding: 20em 0 20em;  
+
+  /* grid background */
+  background-color: #fff;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+
+  overflow: hidden;
+}
+
+.sections {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1100px;
+  margin: 2rem auto;
+}
+
+.slider {
+  display: flex;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 420ms cubic-bezier(.22,.61,.36,1);
+}
+
+.slider.show-playstyle { transform: translateX(-50%); }
+
+.panel {
+  width: 50%;
+  padding: 1.25rem;
+  box-sizing: border-box;
+}
+
+.playstyle h2 { margin: 0 0 .5rem; color: black }
+.playstyle .muted { color: #666; margin: 0 0 1rem; }
+
+.ps-group { margin: 1rem 0 1.25rem; }
+.ps-list { list-style: none; padding-left: 0; margin: 0; }
+.ps-item-title { font-weight: 700; margin-bottom: .25rem; }
+.ps-sublist { list-style: none; padding-left: 1rem; margin: .5rem 0 0; }
+.ps-subtitle { font-weight: 600; margin-bottom: .25rem; }
+
+.ps-natures { display: flex; flex-wrap: wrap; gap: .5rem; color: black;}
+.nature-chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nature-chip.is-active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+@media (max-width: 780px) {
+  .panel { padding: 1rem; }
+}
+
+.ps-label { display:block; font-weight:600; margin: .5rem 0; color: black; }
+.ps-select {
+  width: 100%;
+  max-width: 520px;
+  padding: .55rem .7rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-weight: 600;
+  margin-bottom: .75rem;
+  background-color: white;
+  color: black;
+}
+.ps-subheading { margin: .75rem 0 .25rem; }
+
+.back-btn {
+  border-radius: 25px;
+  color: white;
+  margin-top: 25px;
+}
+
+.back-btn:hover{
+  color: red;
+  transform: scale(1.1);
+}
