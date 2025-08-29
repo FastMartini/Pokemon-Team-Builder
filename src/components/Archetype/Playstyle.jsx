@@ -28,11 +28,12 @@ function buildOptionsFor(label) {
 }
 
 export default function Playstyle({
-  archetype,                 // lockedArc, e.g. "BulkyOffense"
+  archetype,                 
   selectedPlaystyle,
   setSelectedPlaystyle,
-  selectedNature,            // ✅ NEW
-  setSelectedNature,        // ✅ NEW
+  selectedNature,          
+  setSelectedNature,
+  onSelectPlaystyle        
 }) {
   const archetypeLabel = ARC_VALUE_TO_LABEL[archetype] || archetype;
   const options = useMemo(() => buildOptionsFor(archetypeLabel), [archetypeLabel]);
@@ -47,6 +48,8 @@ export default function Playstyle({
 
   const currentNatures =
     options.find(o => o.value === currentValue)?.natures || [];
+
+  const hasPlaystyle = !!currentValue;
 
   return (
     <section id="Playstyle" className="playstyle">
@@ -82,13 +85,22 @@ export default function Playstyle({
                 key={n}
                 className={`nature-chip ${selectedNature === n ? "is-active" : ""}`}
                 onClick={() => {setSelectedNature(n) 
-                document.getElementById('FinalTeam')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
                 {n}
               </button>
             ))}
           </div>
+          <button
+          type="button"
+          className="back-btn"
+          disabled={!hasPlaystyle}
+          onClick={() => {onSelectPlaystyle
+            document.getElementById('FinalTeam').scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
+          Select
+        </button>
         </div>
       )}
     </section>

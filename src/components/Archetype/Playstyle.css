@@ -92,3 +92,13 @@
 }
 .ps-subheading { margin: .75rem 0 .25rem; }
 
+.back-btn {
+  border-radius: 25px;
+  color: white;
+  margin-top: 25px;
+}
+
+.back-btn:hover{
+  color: red;
+  transform: scale(1.1);
+}
