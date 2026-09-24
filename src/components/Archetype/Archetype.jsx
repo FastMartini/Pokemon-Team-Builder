@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './Archetype.css';
+import ArchetypeReveal from './ArchetypeReveal';
 import { 
     HpBar, AttackBar, DefenseBar,
     SpatkBar, SpdefBar, SpeedBar
@@ -58,15 +59,25 @@ const statsByArchetype = {
       speed: 100    
     }
   };
+
+const LABEL_TO_STATS_KEY = {
+  "Stall": "stall",
+  "Semi-Stall": "SemiStall",
+  "Balance": "Balanced",
+  "Bulky Offense": "BulkyOffense",
+  "Offense": "Offense",
+  "Hyper Offense": "HyperOffense",
+};
   
 
-  const StatSection = ({ lockedArc, setLockedArc }) => {
-    const [arc, setArc] = useState('empty');
- 
-    const currentStats = statsByArchetype[arc] || null;  
+export default function StatSection({ lockedArc, setLockedArc }) {
+  const [arc, setArc] = useState("empty");
+  const statsKey = LABEL_TO_STATS_KEY[arc] ?? arc;
+  const currentStats = statsByArchetype[statsKey] || null;
 
     return(
-        <section id='Archetype' className="archetype">
+        <section id='Archetype' className={`archetype${arc !== 'empty' ? ' archetype--has-reveal' : ''}`}>
+          <ArchetypeReveal key={statsKey} archetype={statsKey} />
 
           <div className="archetype-inner">
 
@@ -84,7 +95,7 @@ const statsByArchetype = {
             <h3>Choose your archetype</h3>
             
             <div className = 'arcControls'>
-                <select value = {arc} onChange = {e => setArc(e.target.value)}>
+                <select aria-label="Choose your archetype" value = {arc} onChange = {e => setArc(e.target.value)}>
                     <option value = "empty">-- pick one --</option>
                     <option value = "stall">Stall</option>
                     <option value = "SemiStall">Semi-Stall</option>
@@ -96,10 +107,8 @@ const statsByArchetype = {
 
                 <button
                     className="btn"
-                    disabled={!arc}
-                    onClick={() => {setLockedArc(arc)
-                    document.getElementById('FinalTeam')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
+                    disabled={!arc || arc === 'empty'}
+                    onClick={() => {setLockedArc(arc)}}
                 >
                     Select
                 </button>
@@ -116,5 +125,3 @@ const statsByArchetype = {
         </section>
     );
 };
-
-export default StatSection;

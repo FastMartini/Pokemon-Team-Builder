@@ -1,7 +1,8 @@
 import { natures } from "./natures.js"
 
-function applyNature(baseStats, natureName) {
+export function applyNature(baseStats, natureName) {
     const nature = natures[natureName];
+    if (!nature) return {...baseStats};
     const modifiedStats = { ...baseStats };
   
     if (nature.up) {

@@ -1,0 +1,112 @@
+.playstyle {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+  margin: 0;
+
+  /* vertical spacing only */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  min-height: 100vh;       /* keeps it full screen height */
+  padding: 20em 1rem;
+
+  /* grid background */
+  background-color: #fff;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+
+  overflow: hidden;
+}
+
+.playstyle > :not(.playstyle-background) {
+  position: relative;
+  z-index: 1;
+}
+
+.playstyle h2 { margin: 0 0 .5rem; color: black }
+.playstyle .muted { color: #666; margin: 0 0 1rem; }
+
+.ps-group { margin: 1rem 0 1.25rem; }
+.ps-list { list-style: none; padding-left: 0; margin: 0; }
+.ps-item-title { font-weight: 700; margin-bottom: .25rem; }
+.ps-sublist { list-style: none; padding-left: 1rem; margin: .5rem 0 0; }
+.ps-subtitle { font-weight: 600; margin-bottom: .25rem; }
+
+.ps-natures { display: flex; flex-wrap: wrap; gap: .5rem; color: black;}
+.nature-chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nature-chip.is-active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.ps-label { display:block; font-weight:600; margin: .5rem 0; color: black; }
+.ps-select {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 520px;
+  padding: .55rem .7rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-weight: 600;
+  margin-bottom: .75rem;
+  background-color: white;
+  color: black;
+}
+.ps-subheading { margin: .75rem 0 .25rem; }
+
+.ps-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.ps-action {
+  border-radius: 25px;
+  color: white;
+}
+
+.ps-back-btn {
+  background-color: white;
+  border-color: #111;
+  color: #111;
+}
+
+.ps-action:hover {
+  color: red;
+  transform: scale(1.1);
+}
+
+.ps-description, .ps-nature-options {
+  box-sizing: border-box;
+  width: min(100%, 620px);
+  padding: 1rem 1.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #243047;
+  text-align: left;
+}
+.ps-description h3 { margin: 0 0 .5rem; font-size: 1rem; }
+.ps-description p { margin: .5rem 0; line-height: 1.65; }
+.ps-nature-options { margin-top: 12px; }
+.ps-help { font-size: .85rem; color: #526078; line-height: 1.5; }
+.ps-action:disabled { opacity: .5; cursor: not-allowed; transform: none; }

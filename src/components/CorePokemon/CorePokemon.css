@@ -1,9 +1,11 @@
 .corePokemon {
+    box-sizing: border-box;
     position: relative;
     overflow: hidden;
     text-align: center;
     justify-content: center;
-    min-height: 70vh; /* space for bg */
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
 /* Light lab-style default that matches hero */
@@ -41,10 +43,16 @@
   .core-bg-overlay { position: absolute; inset: 0; background: rgba(255,255,255,0.35); z-index: 1; }
   
   /* Foreground content above bg */
-  .core-content { position: relative; z-index: 2; }
-  
-  /* Existing styles (kept) */
-  .corePokemon .coreControls { margin-top: 1.5em; }
+  .core-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
   
   .corePokemon select {
     padding: 0.5em;
@@ -64,35 +72,60 @@
 
   .corePokemon button:hover { transform: scale(1.1); color: red; }
   
-  #core-pokemon { padding-top: 300px; margin-top: 0; }
+  #core-pokemon {
+    /* Keep navbar clearance inside the background when the hero link scrolls here. */
+    padding: calc(12rem + clamp(2.5rem, 6vw, 5rem)) 1rem 3rem;
+    margin-top: 0;
+    scroll-margin-top: 0;
+  }
 
   #core-pokemon h2 { 
     color: black; 
-    font-size: 2em;
-    margin-top: -1em;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin: 0;
   }
 
-  .coreControls { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .coreControls { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; width: 100%; }
+  .coreSearch { width: min(260px, 100%); }
   .coreSearch input {
-    min-width: 220px; padding: 0.6em 0.8em; border-radius: 8px;
+    box-sizing: border-box;
+    width: 100%; min-width: 0; padding: 0.6em 0.8em; border-radius: 8px;
     border: 1px solid #ccc; font-size: 1rem; outline: none;
   }
   .coreSearch input:focus { border-color: #3b4cca; box-shadow: 0 0 0 3px rgba(59,76,202,0.15); }
 
 
   .dexNav {
-    display: flex;
+    display: grid;
+    grid-template-columns: clamp(64px, 16vw, 120px) minmax(0, 300px) clamp(64px, 16vw, 120px);
+    align-items: center;
     justify-content: center;
-    gap: 40px; 
-    margin-top: -0.5em;
-    
+    gap: clamp(8px, 3vw, 40px);
+    width: 100%;
+  }
+
+  .dexNav .pop-wrapper {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .dexNav .floating-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+    padding: 0;
+    margin: 0;
   }
   
   /* Shared arrow button styles */
-  .arrow-btn {
-    min-width: 120px;   /* make both buttons same width */
-    height: 60px;
-    font-size: 1.5rem;
+  .corePokemon .arrow-btn {
+    min-width: 0;
+    width: 100%;
+    height: clamp(44px, 6vw, 60px);
+    padding: 0.6em 0.5em;
+    font-size: clamp(0.85rem, 2vw, 1.1rem);
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -123,13 +156,10 @@
  
 
   .dexInfo {
-    font-size: 1.6em;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
     font-weight: bold;
     color: black;
     text-align: center;
     min-width: 150px; /* keeps layout stable */
-    margin-top: 12px;  
+    margin: clamp(-3rem, -5vw, -1.5rem) 0 0; /* bring details closer to the sprite, with less overlap on small screens */
   }
-
-  
-  

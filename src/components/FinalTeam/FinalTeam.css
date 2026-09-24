@@ -1,104 +1,39 @@
 .final-team-container {
-  min-height: 100vh;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: 12em
-}
-
-.header-row {
-  padding-top: 5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: .5em;
-}
-
-.header {
-  font-size: 1.4rem;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  color: #222;
-}
-
-.team-box {
-  border: 1px solid #222;
-  border-radius: 0.5rem;
-  background: #fff;
-  width: 180px;
-  height: 180px;
-  perspective: 700px;
-  cursor: pointer;
-}
-
-.final-team-grid-wrapper {
-  flex: 0.5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.final-team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 180px);
-  grid-template-rows: repeat(2, 180px);
-  gap: 2rem;
-}
-
-.flip-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.team-box.flipped .flip-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-front,
-.flip-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #222;
-}
-
-.flip-front {
-  background: white;
-}
-
-.flip-back {
-  background: #f7f7f7;
-  transform: rotateY(180deg);
-  padding: 0.5rem;
   box-sizing: border-box;
-  overflow-y: auto;
+  min-height: 100vh;
+  padding: 4rem 1.25rem;
+  scroll-margin-top: 12rem;
+  color: #243047;
+  background: #fff;
 }
-
-.flip-back h4 {
-  margin: 0 0 0.25rem;
-  font-size: 1rem;
-}
-
-.flip-back ul {
-  margin: 0;
-  padding-left: 1rem;
-  font-size: 0.8rem;
-  line-height: 1.2;
-}
-
-.flip-back li {
-  margin-bottom: 0.2rem;
-}
+.final-team-container h2 { color: #172033; margin: 0 0 .5rem; font-size: clamp(1.6rem, 4vw, 2.2rem); }
+.team-subtitle { margin: 0 0 .75rem; font-weight: 600; }
+.team-scope, .team-placeholder { max-width: 760px; margin: 0 auto 2rem; color: #526078; line-height: 1.65; }
+.final-team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; max-width: 1080px; margin: 0 auto; }
+.team-member { min-width: 0; padding: 1rem; border: 1px solid #dce3ec; border-radius: 16px; background: #fff; text-align: left; }
+.final-team-container .team-box { display: block; width: 100%; height: 260px; padding: 0; border: 0; background: transparent; perspective: 900px; color: #172033; cursor: pointer; }
+.final-team-container .team-box:hover { transform: none; color: #172033; }
+.team-box:focus-visible { outline: 3px solid #3b4cca; outline-offset: 4px; }
+.flip-inner { position: relative; display: block; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .45s ease; }
+.team-box.flipped .flip-inner { transform: rotateY(180deg); }
+.flip-front, .flip-back { position: absolute; inset: 0; box-sizing: border-box; backface-visibility: hidden; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f3f6fc; }
+.flip-front img { width: 140px; height: 140px; object-fit: contain; image-rendering: pixelated; }
+.team-types { text-transform: capitalize; font-size: .85rem; color: #526078; margin: .3rem 0; }
+.team-role { background: #e2e9ff; color: #273c83; border-radius: 20px; padding: .2rem .65rem; font-size: .8rem; }
+.flip-hint { color: #59677d; font-size: .72rem; margin-top: .6rem; }
+.flip-back { transform: rotateY(180deg); padding: 1rem; }
+.flip-back > strong { margin-bottom: .5rem; }
+.team-stat { width: 100%; display: flex; justify-content: space-between; font-size: .88rem; padding: .15rem 0; }
+.member-meta { font-size: .85rem; margin: 1rem 0 .5rem; }
+.member-reason { font-size: .85rem; line-height: 1.6; }
+.member-score { font-size: .8rem; }
+.member-score summary, .team-formula summary { cursor: pointer; font-weight: 700; }
+.member-score dl > div { display: flex; justify-content: space-between; gap: .5rem; padding: .15rem 0; }
+.member-score dd { margin: 0; font-variant-numeric: tabular-nums; }
+.team-notes, .team-formula { max-width: 1040px; margin: 2rem auto 0; padding: 1.25rem; border: 1px solid #dce3ec; border-radius: 14px; text-align: left; line-height: 1.65; }
+.team-notes { background: #fffbeb; border-color: #f4d594; }
+.team-notes h3 { margin-top: 0; }
+.formula-equation { padding: 1rem; background: #eef2ff; border-radius: 8px; font-weight: 600; }
+@media (max-width: 850px) { .final-team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 540px) { .final-team-grid { grid-template-columns: 1fr; } .final-team-container { padding-inline: 1rem; } }
+@media (prefers-reduced-motion: reduce) { .flip-inner { transition: none; } }

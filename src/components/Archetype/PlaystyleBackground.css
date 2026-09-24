@@ -1,0 +1,64 @@
+.playstyle-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* A full-width track carries sprites beyond both edges before each new pass. */
+.playstyle-sprite-track {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(--sprite-size, 84px);
+  margin-top: calc(var(--sprite-size, 84px) / -2);
+  animation-name: playstyle-sprite-drift;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.playstyle-sprite-track img {
+  position: absolute;
+  top: 0;
+  left: -160px;
+  display: block;
+  width: var(--sprite-size, 84px);
+  height: auto;
+  image-rendering: pixelated;
+  animation: playstyle-sprite-spin var(--sprite-spin-duration, 6s) linear infinite;
+  animation-delay: var(--sprite-spin-delay, 0s);
+  animation-direction: var(--sprite-spin-direction, normal);
+}
+
+@keyframes playstyle-sprite-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  10%, 85% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: translate3d(calc(100% + 320px), var(--sprite-drift), 0);
+    opacity: 0;
+  }
+}
+
+@keyframes playstyle-sprite-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 780px) {
+  .playstyle-sprite-track:nth-child(n + 19) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .playstyle-background {
+    display: none;
+  }
+}

@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "test": "node --test",
+    "data:refresh": "node scripts/refresh-pokemon-data.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -1,0 +1,26 @@
+.sections {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  max-width: none;
+  margin: 2rem calc(50% - 50vw);
+  min-height: 340px; 
+}
+
+.slider {
+  display: flex;
+  width: 200%;           
+  transform: translateX(0); 
+  transition: transform 420ms cubic-bezier(.22,.61,.36,1);
+}
+
+.slider.show-playstyle {
+  transform: translateX(-50%); 
+}
+
+.panel {
+  flex: 0 0 50%;
+  min-width: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
