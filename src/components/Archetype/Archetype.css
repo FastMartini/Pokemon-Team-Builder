@@ -1,6 +1,7 @@
 /* ---------- Full-bleed Archetype section ---------- */
 #Archetype {
   position: relative;
+  isolation: isolate;
 
   /* full-bleed trick (break out of parent max-width) */
   width: 100vw;
@@ -28,10 +29,32 @@
 
 /* ---------- Centered inner content ---------- */
 .archetype-inner {
-    max-width: 1000px;      
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    width: min(560px, calc(100% - 2rem));
     margin: 0 auto;
-    padding: 0 2rem;         /* page gutter */
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 16px 48px rgba(15, 23, 42, 0.12);
     text-align: center;
+}
+
+@media (min-width: 1100px) {
+  .archetype--has-reveal .archetype-inner {
+    width: min(560px, 48vw);
+    margin-left: 48%;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 1099px) {
+  #Archetype.archetype--has-reveal {
+    gap: 2rem;
+    padding: 5rem 0;
+  }
 }
 
 /* ---------- Bars area ---------- */
@@ -50,12 +73,14 @@
 /* ---------- Controls row ---------- */
 .archetype .arcControls {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
 }
 
 .archetype select {
+  max-width: 100%;
   background: #fff;
   color: #000;
   padding: 0.5em 0.9em;

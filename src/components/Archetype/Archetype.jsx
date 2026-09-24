@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './Archetype.css';
+import ArchetypeReveal from './ArchetypeReveal';
 import { 
     HpBar, AttackBar, DefenseBar,
     SpatkBar, SpdefBar, SpeedBar
@@ -75,7 +76,8 @@ export default function StatSection({ lockedArc, setLockedArc }) {
   const currentStats = statsByArchetype[statsKey] || null;
 
     return(
-        <section id='Archetype' className="archetype">
+        <section id='Archetype' className={`archetype${arc !== 'empty' ? ' archetype--has-reveal' : ''}`}>
+          <ArchetypeReveal key={statsKey} archetype={statsKey} />
 
           <div className="archetype-inner">
 
@@ -93,7 +95,7 @@ export default function StatSection({ lockedArc, setLockedArc }) {
             <h3>Choose your archetype</h3>
             
             <div className = 'arcControls'>
-                <select value = {arc} onChange = {e => setArc(e.target.value)}>
+                <select aria-label="Choose your archetype" value = {arc} onChange = {e => setArc(e.target.value)}>
                     <option value = "empty">-- pick one --</option>
                     <option value = "stall">Stall</option>
                     <option value = "SemiStall">Semi-Stall</option>
@@ -105,7 +107,7 @@ export default function StatSection({ lockedArc, setLockedArc }) {
 
                 <button
                     className="btn"
-                    disabled={!arc}
+                    disabled={!arc || arc === 'empty'}
                     onClick={() => {setLockedArc(arc)}}
                 >
                     Select
@@ -123,5 +125,3 @@ export default function StatSection({ lockedArc, setLockedArc }) {
         </section>
     );
 };
-
-

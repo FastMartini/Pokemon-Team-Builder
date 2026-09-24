@@ -105,18 +105,17 @@ export default function CorePokemon({ pokemon, setPokemon }) {
 
       {/* Foreground container (content sits above the bg + overlay) */}
       <div className="core-content">
-        {/* Displays the Pokémon sprite image */}
-        <PokeImg pokemon={pokemon} />
-        
         <h2>Choose Your Core Pokémon</h2>
 
         <div className="dexNav">
           <button className="arrow-btn left" onClick={goPrev}>Prev</button>
-          <span className="dexInfo">
-            #{pokedex[currentName]} {currentName}
-          </span>
+          <PokeImg pokemon={pokemon} />
           <button className="arrow-btn right" onClick={goNext}>Next</button>
         </div>
+
+        <p className="dexInfo" aria-live="polite">
+          #{pokedex[currentName]} {currentName}
+        </p>
 
         <div className="coreControls">
 

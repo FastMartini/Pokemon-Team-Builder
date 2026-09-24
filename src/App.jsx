@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Corepokemon from './components/CorePokemon/CorePokemon'
 import Archetype from './components/Archetype/Archetype'
@@ -14,7 +14,17 @@ function App() {
   const [lockedArc, setLockedArc] = useState('');
   const [selectedPlaystyle, setSelectedPlaystyle] = useState('');
   const [selectedNature, setSelectedNature] = useState('');
-  const sliderClass = lockedArc ? 'slider show-playstyle' : 'slider';
+  const [showPlaystyles, setShowPlaystyles] = useState(false);
+  const sliderClass = showPlaystyles ? 'slider show-playstyle' : 'slider';
+
+  const selectArchetype = (archetype) => {
+    if (archetype !== lockedArc) {
+      setSelectedPlaystyle('');
+      setSelectedNature('');
+    }
+    setLockedArc(archetype);
+    setShowPlaystyles(true);
+  };
   
   return (
     <>
@@ -27,7 +37,7 @@ function App() {
         <div className="sections">
           <div className={sliderClass}>
             <div className="panel">
-              <Archetype lockedArc={lockedArc} setLockedArc={setLockedArc} />
+              <Archetype lockedArc={lockedArc} setLockedArc={selectArchetype} />
             </div>
 
             <div className="panel">
@@ -37,12 +47,13 @@ function App() {
                 setSelectedPlaystyle={setSelectedPlaystyle}
                 selectedNature={selectedNature}
                 setSelectedNature={setSelectedNature}
+                onBack={() => setShowPlaystyles(false)}
               />
             </div>
           </div>
         </div>
 
-        <FinalTeam corePokemon={pokemon} lockedArc={lockedArc} selectedNature={selectedNature}/>
+        <FinalTeam corePokemon={pokemon} lockedArc={lockedArc} selectedPlaystyle={selectedPlaystyle} selectedNature={selectedNature}/>
         <p className="read-the-docs">
         Pokémon are registered trademarks of Nintendo and Game Freak.
         </p>
